@@ -1,0 +1,17 @@
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+	<google-map center='map.center' zoom='map.zoom' draggable="true" events="map.events">
+	</google-map>
+</div>
+<div class="hidden-xs hidden-sm col-md-4 col-lg-4" ng-controller="RoadTabController">
+	<div class="page-header">
+		<h1>Traffic Volume Timeline</h1>
+	</div>
+    <form name="historicalForm" ng-submit="getHistorical()">
+        <input type="text" name="historicalDatetime" ng-model="historicalDatetime" />
+        <input type="submit" id="submit" value="Fetch Results" />
+    </form>
+	<tabset vertical="true" type="navType">
+		<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" select="selectTab()"></tab>
+	</tabset>
+</div>
+

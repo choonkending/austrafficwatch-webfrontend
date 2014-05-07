@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="ausTrafficWatchApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>AusTrafficWatch</title>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/css/app.css"/>
+  
+</head>
+<body>
+  <!-- Mobile-friendly navbar -->
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" href="#">AusTrafficWatch</a>
+            </div>
+            <nav class="hidden-xs">
+                <ul class="nav navbar-nav">
+                    <a href="#" role="button" class="navbar-brand">
+                        AusTrafficWatch
+                    </a>
+                    <li class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle">
+                            Map Types <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/view1">Map I</a></li>
+							<li><a href="#/view2">Map II</a></li>
+							<li><a href="#/view3">Map III</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#/about" tooltip-placement="bottom" tooltip="About our awesome team">About</a></li>
+                </ul>
+            </nav>
+            <nav class="visible-xs" collapse="!isCollapsed">
+                <ul class="nav navbar-nav">
+                   <li><a href="#" ng-click="isCollapsed = !isCollapsed">Map Types</a></li>
+                   <li><a href="#/about" ng-click="isCollapsed = !isCollapsed" tooltip-placement="bottom" tooltip="About our awesome team">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="bs-sidebar visible-xs" id="directives_small">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#"><strong>Map Types</strong></a></li>
+                        
+                            <li><a href="#/view1">Map I</a></li>
+                        
+                            <li><a href="#/view2">Map II</a></li>
+                        
+                            <li><a href="#/view3">Map III</a></li>
+                        
+                    </ul>
+                </section>
+			</div>
+		</div>
+  </div>
+  <div class="header-placeholder"></div>
+  <div class="container">
+	<div class="row">
+		<div ng-view></div>
+	</div>
+  </div>
+  
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+ 
+  <script src="/static/lib/angular/angular.js"></script>
+  <script src="/static/lib/angular/angular-route.js"></script>
+  <script src="/static/lib/angular/angular-resource.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/services.js"></script>
+  <script src="/static/js/controllers.js"></script>
+  <script src="/static/js/filters.js"></script>
+  <script src="/static/js/directives.js"></script>
+  <script src="/static/lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCckdxvZWwy9S1O4ya_1ZC4c9SYcmfDW2E&libraries=visualization&sensor=false"></script>
+  <script src='/static/lib/angular-google-maps/underscore-min.js'></script>
+  <script src='/static/lib/angular-google-maps/angular-google-maps.js'></script>
+  
+</body>
+</html>

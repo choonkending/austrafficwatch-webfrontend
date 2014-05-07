@@ -1,0 +1,52 @@
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+	<google-map center='map.center' zoom='map.zoom' draggable="true">
+		<!--
+		<marker coords="map.marker" options="map.marker.options" click="map.marker.onClicked">
+			<window show="map.marker.showWindow" closeClick="map.marker.closeClick">
+				<p>Incident occured at: {{ map.marker.latitude | number:4 }}, {{ map.marker.longitude | number:4 }}</p>		
+				<p>User : {{map.marker.user}}</p>
+				<p>ID: {{map.marker.id}}</p>
+				<p>Time: {{map.marker.time}}</p>
+				<p>Source: {{map.marker.source}}</p>
+				<p>Content: {{map.marker.text}}</p>
+			</window>
+		</marker>
+		-->
+		<markers models="map.markers" coords="'self'" icon="'icon'" >
+            		<windows show="map.markers.showWindow">
+				<p ng-non-bindable>Incident occured at: {{ latitude | number:4 }}, {{ longitude | number:4 }}</p>		
+				<p ng-non-bindable>Source: {{user}}</p>
+				<p ng-non-bindable>Category: {{category}}</p>
+				<p ng-non-bindable>ID: {{id}}</p>
+				<p ng-non-bindable>Time: {{time}}</p>
+				<p ng-non-bindable>Social Network: {{source}}</p>
+				<p ng-non-bindable>Content: {{text}}</p>
+			</windows>
+        	</markers>	
+	</google-map>	
+</div>
+<div class="hidden-xs hidden-sm col-md-4 col-lg-4" ng-controller="SideTabsController">
+	<div class="page-header">
+		<h1>Traffic Related Tweets</h1>
+	</div>
+	<tabset vertical="true" type="navType">
+		<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" select="getOccurrence()"></tab>
+	</tabset>
+</div>
+<div class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container">
+		<nav class>
+			<ul class="nav navbar-nav map-legend">
+				<li><span class="crash"></span> Crash </li>
+				<li><span class="breakdown"></span> Breakdown </li>
+                <li><span class="closed"></span> Closed </li>
+                <li><span class="blocked"></span> Blocked </li>
+                <li><span class="slow"></span> Slow </li>
+                <li><span class="clear"></span> Clear </li>
+                <li><span class="other"></span> Other </li>
+                <li><span class="uncategorized"></span> Uncategorized </li>
+			</ul>
+		</div>
+	</div>
+</div>
+
